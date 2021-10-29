@@ -12,7 +12,6 @@ class TaskAdd extends React.Component{
     }
 
     handleAdd(e) {
-        console.log(this.state.taskDesc);
         this.props.callback(this.state.taskDesc);
         this.setState({
             taskDesc: ''

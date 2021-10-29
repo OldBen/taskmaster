@@ -2,13 +2,6 @@ import React from "react";
 
 class TaskList extends React.Component{
 
-    addTask(desc) {
-        if (!desc) return;
-        this.setState({
-            tasks: [...this.state.tasks, desc]
-        })
-    }
-
     render() {
         return(
             <div>
