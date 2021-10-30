@@ -16,7 +16,7 @@ class TaskView2 extends React.Component{
 
     render() {
         return(
-            <div>
+            <div id="core">
                 <TaskList tasks={this.state.tasks}></TaskList>
                 <TaskAdd callback={this.addTask.bind(this)}></TaskAdd>
             </div>

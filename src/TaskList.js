@@ -1,16 +1,15 @@
+import { List, ListItemText } from "@mui/material";
 import React from "react";
 
 class TaskList extends React.Component{
 
     render() {
         return(
-            <div>
-                <ul>
+            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     {this.props.tasks.map((tasks, i) => (
                         <Task2 key={`${tasks}_${i}`} name={tasks}/>
                     ))}
-                </ul>
-            </div>
+            </List>
         )
     }
 }
@@ -18,7 +17,7 @@ class TaskList extends React.Component{
 class Task2 extends React.Component{
     render() {
         return (
-            <li><h4>{this.props.name}</h4></li>
+            <ListItemText>{this.props.name}</ListItemText>
         )
     }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, TextField } from "@mui/material";
 
 class TaskAdd extends React.Component{
     state = {
@@ -21,8 +22,8 @@ class TaskAdd extends React.Component{
     render() {
         return(
             <div>
-                <input type="text" placeholder="TODO" name="taskDesc" onChange={this.handleChange.bind(this)}></input>
-                <button onClick={this.handleAdd.bind(this)}>Add</button>
+                <TextField variant="standard" placeholder="TODO" onChange={this.handleChange.bind(this)}></TextField>
+                <Button variant="contained" onClick={this.handleAdd.bind(this)}>Add</Button>
             </div>
         )
     }
