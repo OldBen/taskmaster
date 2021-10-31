@@ -1,4 +1,5 @@
-import { List, ListItemText } from "@mui/material";
+import { List } from "@mui/material";
+import TaskItem from "./TaskItem";
 import React from "react";
 
 class TaskList extends React.Component{
@@ -7,17 +8,9 @@ class TaskList extends React.Component{
         return(
             <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     {this.props.tasks.map((tasks, i) => (
-                        <Task2 key={`${tasks}_${i}`} name={tasks}/>
+                        <TaskItem key={`${tasks}_${i}`} index={i} name={tasks} callbackComplete={this.props.callbackComplete}/>
                     ))}
             </List>
-        )
-    }
-}
-
-class Task2 extends React.Component{
-    render() {
-        return (
-            <ListItemText>{this.props.name}</ListItemText>
         )
     }
 }

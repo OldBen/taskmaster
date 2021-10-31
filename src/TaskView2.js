@@ -14,11 +14,19 @@ class TaskView2 extends React.Component{
         });
     }
 
+    completeTask(index) {
+        let newList = this.state.tasks;
+        newList.splice(index, 1)
+        this.setState({
+            tasks: newList
+        })
+    }
+
     render() {
         return(
             <div id="core">
-                <TaskList tasks={this.state.tasks}></TaskList>
-                <TaskAdd callback={this.addTask.bind(this)}></TaskAdd>
+                <TaskList tasks={this.state.tasks} callbackComplete={this.completeTask.bind(this)}></TaskList>
+                <TaskAdd callbackAdd={this.addTask.bind(this)}></TaskAdd>
             </div>
         )
     }
