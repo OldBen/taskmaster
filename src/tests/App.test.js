@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from './App';
+import App from '../App';
 
 
 describe('main test suite', () => {
@@ -9,6 +9,7 @@ describe('main test suite', () => {
     expect(screen.getByRole('textbox')).toBeInTheDocument();
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
+  
   test("adds new task", () => {
     render(<App/>);
     const box = screen.getByRole('textbox');
@@ -19,6 +20,7 @@ describe('main test suite', () => {
     fireEvent.click(button, {});
     expect(screen.getByText('test task')).toBeInTheDocument();
   });
+
   test("add multiple tasks", () => {
     render(<App/>);
     const box = screen.getByRole('textbox');
@@ -34,6 +36,7 @@ describe('main test suite', () => {
     expect(screen.getByText('test task')).toBeInTheDocument();
     expect(screen.getByText('test task 2')).toBeInTheDocument();
   });
+
   test("complete a task", () => {
     render(<App/>);
     const box = screen.getByRole('textbox');

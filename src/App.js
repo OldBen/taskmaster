@@ -1,11 +1,14 @@
 import './App.css';
-import TaskView2 from './TaskView2';
+import TaskLoader from './TaskLoader';
+import TaskView from './TaskView';
 
 function App() {
 
+  let loader = new TaskLoader();
+
   return (
     <div>
-    <TaskView2></TaskView2>
+    <TaskView loader={loader}></TaskView>
     </div>
   );
 }
